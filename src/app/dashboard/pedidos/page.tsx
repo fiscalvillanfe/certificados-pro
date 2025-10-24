@@ -1,6 +1,10 @@
-// src/app/dashboard/pedidos/page.tsx
 'use client';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const fetchCache = 'default-no-store';
+export const runtime = 'nodejs';
 
+// src/app/dashboard/pedidos/page.tsx
 import { useEffect, useMemo, useState } from 'react';
 import { Edit2, Plus, Save, X } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';

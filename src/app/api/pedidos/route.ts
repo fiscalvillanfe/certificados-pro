@@ -1,3 +1,4 @@
+export const runtime = 'nodejs';
 // src/app/api/pedidos/route.ts
 import { NextResponse } from 'next/server';
 import { prisma } from '../../../lib/prisma';
