@@ -1,33 +1,56 @@
-import NextAuth from 'next-auth';
-import Credentials from 'next-auth/providers/credentials';
-import { prisma } from './prisma';
-import bcrypt from 'bcryptjs';
+// src/lib/auth.ts
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import { prisma } from "./prisma";
 
-function stripDigits(v: string) {
-  return (v || '').replace(/\D/g, '');
-}
+// helpers
+function onlyDigits(s: string) { return (s || "").replace(/\D/g, ""); }
+function sameCpf(a: string, b: string) { return onlyDigits(a) === onlyDigits(b); }
 
-export const { handlers, auth } = NextAuth({
-  session: { strategy: 'jwt' },
+// tipa as credenciais para o TS parar de reclamar
+type Creds = { cpf?: string; senha?: string };
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Credentials({
-      name: 'CPF',
+      name: "CPF e Senha",
       credentials: {
-        cpf: { label: 'CPF', type: 'text' },
-        password: { label: 'Senha', type: 'password' },
+        cpf: { label: "CPF", type: "text" },
+        senha: { label: "Senha", type: "password" },
       },
-      async authorize(creds: Record<string, unknown> | undefined) {
-        const cpf = stripDigits(String(creds?.cpf ?? ''));
-        const password = String(creds?.password ?? '');
+      authorize: async (rawCreds) => {
+        const creds = (rawCreds || {}) as Creds;
+        const cpf = String(creds.cpf ?? "").trim();
+        const senha = String(creds.senha ?? "").trim();
 
-        const user = await prisma.user.findUnique({ where: { cpf } });
+        // DEBUG: veja no terminal o que chegou
+        console.log("[auth] recebido:", { cpf, senhaLen: senha.length });
+
+        if (!cpf || !senha) {
+          console.log("[auth] faltando cpf/senha");
+          return null;
+        }
+
+        // compara por dígitos para aceitar CPF com/sem pontuação
+        const users = await prisma.user.findMany();
+        const user = users.find(u => sameCpf(u.cpf, cpf));
+        console.log("[auth] encontrou user?", !!user, "cpfBanco:", user?.cpf);
+
         if (!user) return null;
+        if (user.senha !== senha) {
+          console.log("[auth] senha incorreta");
+          return null;
+        }
 
-        const ok = await bcrypt.compare(password, user.password);
-        if (!ok) return null;
-
-        return { id: user.id, name: user.name, cpf: user.cpf } as any;
-      },
-    }),
+        console.log("[auth] login OK:", user.id);
+        return { id: user.id, name: user.nome, cpf: user.cpf };
+      }
+    })
   ],
+  pages: {
+    signIn: "/login", // se você já tem outra, pode manter. Se não tiver, o NextAuth usa a padrão.
+    error: "/login"
+  },
+  session: { strategy: "jwt" },
+  secret: process.env.NEXTAUTH_SECRET
 });

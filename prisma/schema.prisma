@@ -7,50 +7,83 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum TipoCert {
-  A1
-  A3
+enum Responsavel {
+  FRANK_GIOVANNI_LOPES   @map("FRANK GIOVANNI LOPES")
+  MATHEUS_CARDOSO_SOARES @map("MATHEUS CARDOSO SOARES")
+
+  @@map("Responsavel")
 }
 
-enum SubtipoA3 {
-  COM_TOKEN
-  SEM_TOKEN
+enum TokenOpcao {
+  COM_TOKEN @map("com-token")
+  SEM_TOKEN @map("sem-token")
+
+  @@map("TokenOpcao")
 }
 
-enum Criador {
-  FRANK_GIOVANNI_LOPES
-  MATHEUS_CARDOSO_SOARES
+enum NotifType {
+  PEDIDO_CREATE    @map("pedido:create")
+  PEDIDO_DELETE    @map("pedido:delete")
+  RELATORIO_GERADO @map("relatorio:gerado")
+
+  @@map("NotifType")
+}
+
+enum RelatoFormato {
+  PDF   @map("pdf")
+  EXCEL @map("excel")
+
+  @@map("RelatoFormato")
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome      String
   cpf       String   @unique
-  name      String
-  password  String
-  createdAt DateTime @default(now())
+  senha     String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("users")
 }
 
 model Pedido {
-  id            String   @id @default(cuid())
-  empresa       String
-  representante String
-  tipo          TipoCert
-  subtipoA3     SubtipoA3?
-  doc           String
-  isCNPJ        Boolean
-  valorTotal    Decimal  @db.Decimal(12, 2)
-  valorRecebido Decimal  @db.Decimal(12, 2)
-  criador       Criador
-  createdAt     DateTime @default(now())
+  id                 String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  tipo               String
+  isA3               Boolean     @map("is_a3")
+  isCnpj             Boolean     @map("is_cnpj")
+  cpfCnpj            String      @map("cpf_cnpj")
+  nomePessoa         String?     @map("nome_pessoa")
+  curador            String?
+  nomeEmpresa        String?     @map("nome_empresa")
+  representanteLegal String?     @map("representante_legal")
+  tokenOpcao         TokenOpcao? @map("token_opcao")
+  valorTotal         Decimal     @map("valor_total") @db.Decimal(12, 2)
+  valorRecebido      Decimal     @map("valor_recebido") @db.Decimal(12, 2)
+  responsavel        Responsavel
+  createdAt          DateTime    @default(now()) @map("created_at")
+
+  @@map("pedidos")
 }
 
-model Report {
-  id        String   @id @default(cuid())
-  title     String
-  mime      String
-  periodIni DateTime
-  periodFim DateTime
-  file      Bytes
-  createdAt DateTime @default(now())
-  createdBy String
+model Notificacao {
+  id        String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  tipo      NotifType   @map("type")
+  ator      Responsavel @map("actor")
+  payload   Json
+  lida      Boolean     @default(false) @map("read")
+  createdAt DateTime    @default(now()) @map("created_at")
+
+  @@map("notificacoes")
+}
+
+model Relatorio {
+  id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  inicio      DateTime      @db.Date
+  fim         DateTime      @db.Date
+  formato     RelatoFormato
+  storagePath String?       @map("storage_path")
+  createdBy   Responsavel   @map("created_by")
+  createdAt   DateTime      @default(now()) @map("created_at")
+
+  @@map("relatorios")
 }
