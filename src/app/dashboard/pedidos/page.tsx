@@ -1,7 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-export const fetchCache = 'default-no-store';
+export const fetchCache = 'force-no-store';
 export const runtime = 'nodejs';
 
 // src/app/dashboard/pedidos/page.tsx
@@ -366,7 +366,7 @@ export default function PedidosPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Pedidos</h1>
-        <button type="button" onClick={abrirCriar} className="btn w-auto flex items-center gap-2"><Plus size={16} /> Novo pedido</button>
+        <button type="button" onClick={abrirCriar} className="btn w-auto flex itemsente gap-2"><Plus size={16} /> Novo pedido</button>
       </div>
 
       <div className="card flex flex-wrap items-center gap-3">

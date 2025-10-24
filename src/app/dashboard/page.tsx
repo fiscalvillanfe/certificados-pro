@@ -1,7 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-export const fetchCache = 'default-no-store';
+export const fetchCache = 'force-no-store';
 export const runtime = 'nodejs';
 
 import { useSession } from 'next-auth/react';

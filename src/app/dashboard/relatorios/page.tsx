@@ -1,7 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-export const fetchCache = 'default-no-store';
+export const fetchCache = 'force-no-store';
 export const runtime = 'nodejs';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -12,7 +12,6 @@ import { useSearchParams } from 'next/navigation';
 import SimpleLineChart, { Point } from '../../../components/SimpleLineChart';
 import Modal from '../../../components/Modal';
 
-// Tipos básicos do mock
 type Pedido = {
   id: string;
   tipo: string;
@@ -47,7 +46,6 @@ export default function RelatoriosPage() {
   const [showCharts, setShowCharts] = useState(false);
   const [periodo, setPeriodo] = useState<Periodo>('mensal');
 
-  // modal de geração
   const [genOpen, setGenOpen] = useState(false);
   const [genLoading, setGenLoading] = useState(false);
   const [genDataUrl, setGenDataUrl] = useState<string | null>(null);
@@ -88,9 +86,8 @@ export default function RelatoriosPage() {
   const totalVendido = useMemo(() => pedidosPeriodo.reduce((acc, p) => acc + (p.valorTotal || 0), 0), [pedidosPeriodo]);
   const totalRecebido = useMemo(() => pedidosPeriodo.reduce((acc, p) => acc + (p.valorRecebido || 0), 0), [pedidosPeriodo]);
 
-  // Agregação para o gráfico (vendas = valorRecebido por período)
   const points: Point[] = useMemo(() => {
-    const map = new Map<number, number>(); // key = bucket, val = soma
+    const map = new Map<number, number>();
     const dayMs = 24 * 3600 * 1000;
     for (const p of pedidosPeriodo) {
       const d = new Date(p.createdAt);
@@ -99,7 +96,7 @@ export default function RelatoriosPage() {
         key = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
       } else if (periodo === 'semanal') {
         const base = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-        const dow = base.getDay(); // 0..6
+        const dow = base.getDay();
         const start = new Date(base.getTime() - dow * dayMs);
         key = new Date(start.getFullYear(), start.getMonth(), start.getDate()).getTime();
       } else if (periodo === 'mensal') {
@@ -131,14 +128,12 @@ export default function RelatoriosPage() {
 
   function startGerar() {
     setGenLoading(true);
-    // Simula geração
     setTimeout(() => {
       const resumo = { tipo: genTipo, inicio, fim, totalVendido, totalRecebido, geradoEm: new Date().toISOString() };
       const dataUrl = 'data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(resumo, null, 2))));
       setGenDataUrl(dataUrl);
       setGenLoading(false);
 
-      // Cria notificação também
       addNotif({
         type: 'relatorio:gerado',
         actor: 'MATHEUS CARDOSO SOARES',
@@ -159,7 +154,6 @@ export default function RelatoriosPage() {
         <div className="card"><div className="text-sm text-neutral-400">Pedidos no período</div><div className="text-2xl font-semibold mt-1">{pedidosPeriodo.length}</div></div>
       </div>
 
-      {/* Filtros + período */}
       <div className="card grid md:grid-cols-2 gap-4 relative">
         <div ref={wrapInicioRef} className="relative">
           <label className="block text-sm mb-1">Início</label>
@@ -211,7 +205,6 @@ export default function RelatoriosPage() {
         <button onClick={() => abrirGerar('excel')} className="btn w-auto">Gerar Excel</button>
       </div>
 
-      {/* Modal de geração */}
       <Modal
         open={genOpen}
         onClose={() => setGenOpen(false)}
