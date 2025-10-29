@@ -1,7 +1,3 @@
-Perfeito.
-Aqui está uma **licença longa, formal e detalhada**, redigida em **português jurídico brasileiro**, proibindo **uso comercial**, **revenda**, **modificação com fins lucrativos** e **redistribuição paga**, mas permitindo estudo, modificação pessoal e uso interno.
-Também inclui cláusulas de responsabilidade, privacidade, autoria e marca registrada — e termina com o símbolo de copyright e seu nome.
-
 ---
 
 ## 📄 **LICENÇA DE USO E DISTRIBUIÇÃO — PROJETO CERTIFICADOSPRO**
