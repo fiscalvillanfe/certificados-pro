@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion';
 
 export default function BackgroundFX() {
-  // nada de z negativo: mantenho em z-0
+  // mantenho em z-0
   const common = 'absolute rounded-full blur-3xl opacity-25 pointer-events-none';
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
-      {/* gradiente base suave */}
+      {/* gradiente suave */}
       <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_10%_10%,rgba(76,124,255,0.12),transparent_60%),radial-gradient(40%_30%_at_90%_0%,rgba(39,73,198,0.10),transparent_60%)]" />
 
       {/* bolha 1 */}
@@ -34,7 +34,7 @@ export default function BackgroundFX() {
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      {/* vinheta escurecendo as bordas */}
+      {/* vinheta */}
       <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_50%,rgba(0,0,0,0)_40%,rgba(0,0,0,0.35)_100%)]" />
     </div>
   );
