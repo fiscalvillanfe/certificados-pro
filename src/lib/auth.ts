@@ -7,7 +7,7 @@ import { prisma } from "./prisma";
 function onlyDigits(s: string) { return (s || "").replace(/\D/g, ""); }
 function sameCpf(a: string, b: string) { return onlyDigits(a) === onlyDigits(b); }
 
-// tipa as credenciais para o TS parar de reclamar
+// tipa as credenciais sla como fala kkkkkkkkkkkkkkkkk
 type Creds = { cpf?: string; senha?: string };
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -23,7 +23,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const cpf = String(creds.cpf ?? "").trim();
         const senha = String(creds.senha ?? "").trim();
 
-        // DEBUG: veja no terminal o que chegou
+        // checar debug 
         console.log("[auth] recebido:", { cpf, senhaLen: senha.length });
 
         if (!cpf || !senha) {
@@ -31,7 +31,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        // compara por dígitos para aceitar CPF com/sem pontuação
+        // classifica os digitos
         const users = await prisma.user.findMany();
         const user = users.find(u => sameCpf(u.cpf, cpf));
         console.log("[auth] encontrou user?", !!user, "cpfBanco:", user?.cpf);
@@ -48,7 +48,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     })
   ],
   pages: {
-    signIn: "/login", // se você já tem outra, pode manter. Se não tiver, o NextAuth usa a padrão.
+    signIn: "/login", // faz o nextauth usar a padrão
     error: "/login"
   },
   session: { strategy: "jwt" },
