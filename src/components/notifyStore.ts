@@ -19,8 +19,7 @@ export type Notif = {
     inicio?: string; // YYYY-MM-DD
     fim?: string;    // YYYY-MM-DD
     formato?: 'pdf' | 'excel';
-    downloadDataUrl?: string; // data:... para simular download
-  };
+    downloadDataUrl?: string; // download
 };
 
 const KEY = 'notifs_v1';
