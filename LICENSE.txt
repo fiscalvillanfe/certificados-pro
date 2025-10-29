@@ -1,0 +1,141 @@
+Perfeito.
+Aqui está uma **licença longa, formal e detalhada**, redigida em **português jurídico brasileiro**, proibindo **uso comercial**, **revenda**, **modificação com fins lucrativos** e **redistribuição paga**, mas permitindo estudo, modificação pessoal e uso interno.
+Também inclui cláusulas de responsabilidade, privacidade, autoria e marca registrada — e termina com o símbolo de copyright e seu nome.
+
+---
+
+## 📄 **LICENÇA DE USO E DISTRIBUIÇÃO — PROJETO CERTIFICADOSPRO**
+
+**Versão 1.0 — 2025**
+**Idioma original: Português (Brasil)**
+
+---
+
+### **1. Disposições Gerais**
+
+O presente instrumento constitui o acordo de licença de uso não exclusiva entre o autor identificado como **FiscalVillanfe** (“AUTOR”) e o usuário final (“USUÁRIO”), relativo ao software denominado **CertificadosPro**, incluindo, mas não se limitando, a todos os seus componentes de código, interfaces gráficas, estruturas de dados, scripts auxiliares, bibliotecas associadas, documentação e demais partes integrantes do projeto.
+
+O uso deste software implica **plena aceitação** dos termos e condições aqui descritos. Caso o USUÁRIO discorde, deve cessar imediatamente qualquer utilização, cópia, modificação ou distribuição do conteúdo.
+
+---
+
+### **2. Objeto da Licença**
+
+Esta licença regula o direito de **utilização, modificação pessoal e estudo** do software **CertificadosPro**, preservando todos os direitos morais e patrimoniais do AUTOR.
+
+O software é disponibilizado **sem custo** e **apenas para fins educacionais, acadêmicos e experimentais**, **proibindo-se expressamente qualquer exploração comercial**, direta ou indireta.
+
+---
+
+### **3. Direitos Concedidos**
+
+O AUTOR concede ao USUÁRIO, de forma gratuita e não exclusiva, os seguintes direitos:
+
+a) **Acessar e estudar** o código-fonte do software para fins de aprendizado, análise ou pesquisa;
+b) **Modificar** o código em ambiente local, exclusivamente para testes, melhorias pessoais ou adaptação interna;
+c) **Executar** o software em ambiente de desenvolvimento ou servidor particular, desde que o acesso seja restrito e não destinado à comercialização, demonstração comercial ou venda de serviços baseados neste sistema.
+
+---
+
+### **4. Restrições de Uso**
+
+O USUÁRIO **NÃO ESTÁ AUTORIZADO** a:
+
+a) Vender, alugar, sublicenciar, arrendar, comercializar, licenciar, oferecer como serviço, ou de qualquer forma obter vantagem financeira direta ou indireta através do uso, modificação ou distribuição deste software;
+b) Incorporar, integrar ou redistribuir qualquer parte do código-fonte em produtos, serviços ou sistemas com fins lucrativos;
+c) Utilizar este software, total ou parcialmente, em projetos de natureza governamental, corporativa ou institucional sem autorização expressa e por escrito do AUTOR;
+d) Retirar, alterar, omitir ou substituir qualquer menção de crédito, aviso de copyright, rodapé de autoria, cabeçalho de arquivo, logotipo ou referência ao nome **FiscalVillanfe**;
+e) Usar este software em contextos que envolvam coleta ou tratamento de dados pessoais sem cumprimento da legislação vigente (Lei nº 13.709/2018 – LGPD).
+
+---
+
+### **5. Propriedade Intelectual**
+
+Todo o conteúdo técnico e artístico do software **CertificadosPro**, incluindo design, interface, estrutura de pastas, scripts, componentes, ícones, textos e código, constitui **obra intelectual protegida** nos termos da Lei nº 9.610/1998 (Lei de Direitos Autorais).
+
+O nome **FiscalVillanfe** é protegido como **assinatura digital e marca identificadora** do autor, e qualquer reprodução ou utilização indevida da identidade, pseudônimo ou logotipo associado constitui violação de direitos autorais e de marca.
+
+---
+
+### **6. Modificações e Obras Derivadas**
+
+O USUÁRIO poderá criar **versões modificadas** para uso pessoal, desde que:
+
+* As modificações **não sejam redistribuídas** publicamente;
+* As modificações **não sejam utilizadas em contextos comerciais**;
+* Seja mantido o crédito original ao AUTOR;
+* Nenhum fragmento do código modificado seja redistribuído em repositórios públicos com finalidades comerciais, de marketing, monetização ou autopromoção profissional.
+
+Qualquer redistribuição, mesmo gratuita, requer **autorização escrita do AUTOR**, com descrição detalhada das modificações realizadas e finalidade do uso.
+
+---
+
+### **7. Distribuição e Reprodução**
+
+É **proibida** a redistribuição pública do software, no todo ou em parte, seja por meio de cópia física, transferência digital, publicação em repositórios públicos (como GitHub, GitLab, Bitbucket, etc.) com fins de monetização, ou qualquer outra forma de disponibilização que possa caracterizar divulgação comercial ou concorrencial.
+
+A exceção aplica-se apenas a **forks educacionais** — cópias públicas destinadas à aprendizagem, desde que devidamente atribuídas ao AUTOR e sem obtenção de qualquer benefício financeiro direto ou indireto.
+
+---
+
+### **8. Garantia e Responsabilidade**
+
+O software é fornecido “**no estado em que se encontra**”, **sem garantia de qualquer natureza**, expressa ou implícita.
+
+O AUTOR **não se responsabiliza** por:
+
+a) Danos diretos, indiretos, incidentais, consequenciais ou especiais decorrentes do uso, mau funcionamento, falhas, perdas de dados, interrupções de serviço, incompatibilidades ou vulnerabilidades;
+b) Uso indevido por terceiros, incluindo violação de dados, falhas de segurança ou exposição indevida de informações sensíveis;
+c) Danos financeiros ou jurídicos decorrentes do uso do software em contextos comerciais não autorizados;
+d) Qualquer prejuízo moral, material ou reputacional derivado de modificações feitas pelo USUÁRIO.
+
+O USUÁRIO assume total responsabilidade sobre a execução do código em seus próprios ambientes, servidores ou dispositivos.
+
+---
+
+### **9. Privacidade e Dados**
+
+O software **não coleta nem transmite intencionalmente dados pessoais a terceiros**.
+Quaisquer adaptações que implementem coleta de dados devem estar em conformidade com a **Lei Geral de Proteção de Dados Pessoais (LGPD)** e demais normas aplicáveis, sob total responsabilidade do USUÁRIO.
+
+---
+
+### **10. Vigência e Rescisão**
+
+Esta licença entra em vigor automaticamente no primeiro uso ou cópia do software.
+O descumprimento de qualquer cláusula implica revogação imediata do direito de uso, obrigando o USUÁRIO a excluir todas as cópias locais e remotas do código.
+
+A revogação não elimina a responsabilidade civil ou penal por violações cometidas durante o período de uso.
+
+---
+
+### **11. Revisões e Atualizações**
+
+O AUTOR reserva-se o direito de modificar os termos desta licença a qualquer momento, sem aviso prévio, publicando novas versões em seus canais oficiais.
+
+As versões antigas permanecem válidas apenas para os softwares distribuídos sob sua vigência original.
+
+---
+
+### **12. Jurisdição e Foro Competente**
+
+Fica eleito o foro da Comarca de **Belo Horizonte – MG**, Brasil, como competente para dirimir quaisquer dúvidas, litígios ou controvérsias decorrentes desta licença, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+
+---
+
+### **13. Declaração Final**
+
+Este software representa o esforço técnico e intelectual do AUTOR em desenvolver uma base funcional para gestão de certificados digitais e integração de sistemas fiscais.
+Embora distribuído gratuitamente, permanece sob proteção integral da legislação autoral brasileira.
+
+A reprodução, redistribuição ou exploração comercial não autorizada será tratada como violação de direito autoral, nos termos dos artigos 102 a 108 da Lei nº 9.610/1998.
+
+---
+
+**Todos os direitos reservados.**
+**© FiscalVillanfe — 2025**
+**Copyright © 2025 FiscalVillanfe.**
+
+---
+
+
