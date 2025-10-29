@@ -1,12 +1,5 @@
 ---
 
-## 📄 **LICENÇA DE USO E DISTRIBUIÇÃO — PROJETO CERTIFICADOSPRO**
-
-**Versão 1.0 — 2025**
-**Idioma original: Português (Brasil)**
-
----
-
 ### **1. Disposições Gerais**
 
 O presente instrumento constitui o acordo de licença de uso não exclusiva entre o autor identificado como **FiscalVillanfe** (“AUTOR”) e o usuário final (“USUÁRIO”), relativo ao software denominado **CertificadosPro**, incluindo, mas não se limitando, a todos os seus componentes de código, interfaces gráficas, estruturas de dados, scripts auxiliares, bibliotecas associadas, documentação e demais partes integrantes do projeto.
