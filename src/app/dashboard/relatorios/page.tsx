@@ -55,7 +55,7 @@ export default function RelatoriosPage() {
       {showGraficos && (
         <div className="card">
           <p className="text-neutral-400 text-sm">
-            Gráficos mensais/semanais/diários serão renderizados aqui. Placeholder temporário.
+            
           </p>
         </div>
       )}
