@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Home, FileText, BarChart3, LogOut } from 'lucide-react';
 
-// cache OFF só aqui no layout (server)
+// cache OFF
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
@@ -30,7 +30,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-4">
-          {/* se quiser, depois renderiza nome do usuário via server actions */}
+          {/*  */}
           <Link href="/api/auth/signout" className="flex items-center gap-2 text-sm text-red-400 hover:text-red-300 transition">
             <LogOut size={16} />
             Sair
